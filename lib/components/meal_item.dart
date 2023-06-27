@@ -61,7 +61,7 @@ class MealItem extends StatelessWidget {
                     ),
                     child: Text(
                       meal.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 26,
                         color: Colors.white,
                       ),
@@ -79,22 +79,22 @@ class MealItem extends StatelessWidget {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(Icons.schedule),
-                      SizedBox(width: 6),
+                      const Icon(Icons.schedule),
+                      const SizedBox(width: 6),
                       Text('${meal.duration} min'),
                     ],
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.work),
-                      SizedBox(width: 6),
+                      const Icon(Icons.work),
+                      const SizedBox(width: 6),
                       Text(meal.complexityText),
                     ],
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.attach_money),
-                      SizedBox(width: 6),
+                      const Icon(Icons.attach_money),
+                      const SizedBox(width: 6),
                       Text(meal.costText),
                     ],
                   ),
