@@ -8,7 +8,7 @@ import '../models/meal.dart';
 class TabsScreen extends StatefulWidget {
   final List<Meal> favoriteMeals;
 
-  const TabsScreen(this.favoriteMeals);
+  const TabsScreen(this.favoriteMeals, {Key? key}) : super(key: key);
 
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -28,7 +28,7 @@ class _TabsScreenState extends State<TabsScreen> {
   void initState() {
     super.initState();
     _screens = [
-      CategoriesScreen(),
+      const CategoriesScreen(),
       FavoriteScreen(widget.favoriteMeals),
     ];
   }
@@ -45,15 +45,15 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_titles[_selectedScreenIndex]),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
         currentIndex: _selectedScreenIndex,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
             label: 'Categorias',

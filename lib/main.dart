@@ -10,9 +10,11 @@ import 'models/meal.dart';
 import 'models/settings.dart';
 import 'data/dummy_data.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -20,7 +22,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Settings settings = Settings();
   List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = [];
 
   void _filterMeals(Settings settings) {
     setState(() {
@@ -57,16 +59,16 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
         fontFamily: 'Raleway',
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: const TextStyle(
+              titleLarge: const TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
               ),
             ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+            .copyWith(secondary: Colors.amber),
       ),
       routes: {
         AppRoutes.HOME: (ctx) => TabsScreen(_favoriteMeals),
