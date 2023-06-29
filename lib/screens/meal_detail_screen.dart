@@ -45,7 +45,7 @@ class MealDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -74,7 +74,7 @@ class MealDetailScreen extends StatelessWidget {
             _createSectionTitle(context, 'Passos'),
             _createSectionContainer(ListView.builder(
               itemCount: meal.steps.length,
-              itemBuilder: (Ctx, index) {
+              itemBuilder: (ctx, index) {
                 return Column(
                   children: [
                     ListTile(
