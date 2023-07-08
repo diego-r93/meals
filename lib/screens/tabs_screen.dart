@@ -11,7 +11,7 @@ class TabsScreen extends StatefulWidget {
   const TabsScreen(this.favoriteMeals, {Key? key}) : super(key: key);
 
   @override
-  _TabsScreenState createState() => _TabsScreenState();
+  State<TabsScreen> createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
@@ -49,7 +49,7 @@ class _TabsScreenState extends State<TabsScreen> {
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Colors.white,
         selectedItemColor: Theme.of(context).colorScheme.secondary,
         currentIndex: _selectedScreenIndex,

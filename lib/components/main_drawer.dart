@@ -35,11 +35,11 @@ class MainDrawer extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondary,
             alignment: Alignment.bottomRight,
             child: Text(
-              'Vamos Cozinhar',
+              'Vamos Cozinhar?',
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),
